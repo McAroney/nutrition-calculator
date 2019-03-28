@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Provider } from './Context'
+import Search from './components/Search'
+import Resultset from './components/Resultset'
+import Recipe from './components/Recipe'
+
+import './App.css'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <Provider>
+        <div className='App'>
+          <header className='App-header'>
+            <h1>Nutricalc</h1>
+            <Search />
+            <Resultset />
+            <Recipe />
+          </header>
+        </div>
+      </Provider>
+    )
   }
 }
 
-export default App;
+export default App
