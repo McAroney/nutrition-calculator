@@ -1,55 +1,16 @@
 import React, { Component } from 'react'
 import reducer from './actions'
+
 const Context = React.createContext()
 
 export class Provider extends Component {
+  constructor () {
+    const ingridients = Firebase.database().ref('/foods')
+    console.log(ingridients)
+  }
+
   state = {
-    ingridients: [
-      {
-        id: 1,
-        name: 'egg',
-        unit: 'serving',
-        quantity: 1,
-        weight_in_grams: 30,
-        carbs: 32,
-        sugar: 0,
-        protein: 12,
-        fat: 20
-      },
-      {
-        id: 2,
-        name: 'ham',
-        unit: 'grams',
-        quantity: 100,
-        weight_in_grams: 100,
-        carbs: 62,
-        sugar: 5,
-        protein: 22,
-        fat: 20
-      },
-      {
-        id: 3,
-        name: 'broccoli',
-        unit: 'grams',
-        quantity: 100,
-        weight_in_grams: 100,
-        carbs: 32,
-        sugar: 0,
-        protein: 2,
-        fat: 0
-      },
-      {
-        id: 4,
-        name: 'quacamole',
-        unit: 'grams',
-        quantity: 100,
-        weight_in_grams: 100,
-        carbs: 232,
-        sugar: 40,
-        protein: 8,
-        fat: 10
-      }
-    ],
+    ingridients: [],
     recipe_message: '',
     results: [],
     recipe: [],

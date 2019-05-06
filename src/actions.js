@@ -2,17 +2,21 @@ export default function reducer (state, action) {
   switch (action.type) {
     case 'SEARCH_INGRIDIENTS':
       const input = action.payload
-
+if(!input.search('/')) {
       function match (ingridients) {
         const results = []
         ingridients.forEach(ingridient => {
           if (input !== '' && ingridient.name.search(input) !== -1) {
             results.push(ingridient)
-          }
+          } 
         })
 
         return results
       }
+    } else if (input === '*') {
+results = ingridients;
+    }
+
 
       return {
         ...state,
