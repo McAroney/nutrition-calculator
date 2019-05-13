@@ -4,11 +4,6 @@ import reducer from './actions'
 const Context = React.createContext()
 
 export class Provider extends Component {
-  constructor () {
-    const ingridients = Firebase.database().ref('/foods')
-    console.log(ingridients)
-  }
-
   state = {
     ingridients: [],
     recipe_message: '',
